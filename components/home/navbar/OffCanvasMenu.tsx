@@ -16,14 +16,21 @@ const DEFAULT_BG_IMAGE =
   'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80';
 
 const radialMaskVariants: Variants = {
-  hidden: { clipPath: 'circle(0% at 92% 8%)' },
+  hidden: { clipPath: 'circle(0% at 0% 0%)' },
   visible: {
-    clipPath: 'circle(150% at 92% 8%)',
-    transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1], when: 'beforeChildren' },
+    clipPath: 'circle(170% at 0% 0%)',
+    transition: { 
+      duration: 0.85, 
+      ease: [0.76, 0, 0.24, 1], 
+      when: 'beforeChildren' 
+    },
   },
   exit: {
-    clipPath: 'circle(0% at 92% 8%)',
-    transition: { duration: 0.65, ease: [0.76, 0, 0.24, 1] },
+    clipPath: 'circle(0% at 0% 0%)',
+    transition: { 
+      duration: 0.65, 
+      ease: [0.76, 0, 0.24, 1] 
+    },
   },
 };
 
@@ -66,7 +73,7 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="fixed inset-0 z-50 overflow-hidden font-serif bg-slate-950 will-change-[clip-path]"
+          className="fixed px-40 inset-0 z-50 overflow-hidden font-serif bg-slate-950 will-change-[clip-path]"
         >
           {/* Background Layer */}
           <motion.div
@@ -81,7 +88,7 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
           </motion.div>
 
           {/* Header Bar */}
-          <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-16 py-6 sm:py-8">
+          <div className="relative top-0 left-0 right-0 z-20 flex items-center justify-between px-24 sm:px-16 py-6 sm:py-8">
             <Link
               href="/"
               onClick={onClose}

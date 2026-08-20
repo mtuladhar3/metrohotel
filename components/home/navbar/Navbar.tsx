@@ -52,7 +52,17 @@ export default function Navbar() {
   return (
     <>
       <nav className="hero-navbar fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 sm:px-8 lg:px-12 py-4 text-white font-light border-b border-white/10 backdrop-blur-md bg-black/20 transition-all">
-        
+        <button
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Open menu"
+            className="flex items-center justify-center p-1.5 hover:opacity-75 transition-opacity cursor-pointer"
+          >
+            <div className="flex flex-col gap-[5px] w-5 sm:w-6">
+              <span className="w-full h-[1px] bg-white"></span>
+              <span className="w-full h-[1px] bg-white"></span>
+              <span className="w-full h-[1px] bg-white"></span>
+            </div>
+          </button>
         {/* Brand Logo */}
         <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
           <span className="text-base sm:text-xl italic font-serif">✦</span>
@@ -70,17 +80,7 @@ export default function Navbar() {
           </button>
 
           {/* Hamburger Menu Icon */}
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open menu"
-            className="flex items-center justify-center p-1.5 hover:opacity-75 transition-opacity cursor-pointer"
-          >
-            <div className="flex flex-col gap-[5px] w-5 sm:w-6">
-              <span className="w-full h-[1px] bg-white"></span>
-              <span className="w-full h-[1px] bg-white"></span>
-              <span className="w-full h-[1px] bg-white"></span>
-            </div>
-          </button>
+          
         </div>
 
         {/* Branches Mega Menu Component */}
