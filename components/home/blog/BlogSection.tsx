@@ -4,7 +4,7 @@
 import { useEffect, useRef } from 'react';
 import BlogHeader from './BlogHeader';
 import BlogCard from './BlogCard';
-import { BLOG_POSTS_DATA } from './blogData';
+import { BLOG_POSTS_DATA } from '@/data/blog';
 
 export default function BlogSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

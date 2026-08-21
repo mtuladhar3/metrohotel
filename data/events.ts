@@ -1,4 +1,4 @@
-// src/components/home/events/eventsData.ts
+// Event cards for the homepage events section.
 export interface EventItem {
   id: number;
   title: string;

@@ -1,4 +1,4 @@
-// src/components/layout/footer/FooterBackground.tsx
+// Footer background imagery.
 'use client';
 
 import Image from 'next/image';

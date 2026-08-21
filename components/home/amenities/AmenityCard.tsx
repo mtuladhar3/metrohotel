@@ -30,7 +30,7 @@ export default function AmenityCard({
       </div>
 
       {/* Title */}
-      <h3 className="font-serif text-xl text-white/95 mb-2 tracking-wide">
+      <h3 className="text-xl text-white/95 mb-2 tracking-wide">
         {title}
       </h3>
 

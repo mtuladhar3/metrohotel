@@ -20,7 +20,7 @@ export default function AboutLetter() {
 
       <div className="pt-6 flex flex-col items-center gap-1">
         <span className="text-[11px] uppercase tracking-widest text-slate-400">Warmest regards,</span>
-        <span className="font-serif italic text-3xl sm:text-4xl text-slate-900 py-1">
+        <span className="italic text-3xl sm:text-4xl text-slate-900 py-1">
           John Doe
         </span>
         <span className="text-[11px] tracking-wider text-slate-500 uppercase">General Manager</span>

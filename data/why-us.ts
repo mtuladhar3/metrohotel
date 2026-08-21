@@ -1,4 +1,4 @@
-// src/components/home/why-us/whyUsData.ts
+// Feature cards for the homepage why-us section.
 export interface Feature {
   id: number;
   iconName: 'pool' | 'interior' | 'living' | 'entertainment';

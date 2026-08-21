@@ -4,7 +4,7 @@
 import { useEffect, useRef } from 'react';
 import EventHeader from './EventHeader';
 import EventCard from './EventCard';
-import { EVENTS_DATA } from './eventsData';
+import { EVENTS_DATA } from '@/data/events';
 
 export default function EventsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

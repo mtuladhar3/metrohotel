@@ -1,9 +1,9 @@
-// src/components/layout/footer/FooterMiddleRow.tsx
+// Footer middle row with address and CTA.
 'use client';
 
 import Link from 'next/link';
 import { MapPin, Phone } from 'lucide-react';
-import { FOOTER_INFO } from './footerData';
+import { FOOTER_INFO } from '@/data/footer';
 
 export default function FooterMiddleRow() {
   return (

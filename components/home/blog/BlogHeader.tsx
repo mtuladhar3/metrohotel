@@ -6,7 +6,7 @@ export default function BlogHeader() {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-12 sm:mb-16 blog-header-anim">
       {/* Main Title */}
       <div className="lg:col-span-7">
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-900 font-normal leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl text-slate-900 font-normal leading-tight">
           Explore Stories for Your Next Stay
         </h2>
       </div>

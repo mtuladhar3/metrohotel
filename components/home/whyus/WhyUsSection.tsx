@@ -4,7 +4,7 @@
 import { useEffect, useRef } from 'react';
 import WhyUsHeader from './WhyUsHeader';
 import FeatureCard from './FeatureCard';
-import { WHY_US_FEATURES } from './whyUsData';
+import { WHY_US_FEATURES } from '@/data/why-us';
 
 export default function WhyUsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

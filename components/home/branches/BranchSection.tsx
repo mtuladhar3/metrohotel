@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import BranchHeader from './BranchHeader';
 import BranchCard from './BranchCard';
 import BranchControls from './BranchControls';
-import { BRANCHES_DATA } from './branchesData';
+import { BRANCHES_DATA } from '@/data/branches';
 
 export default function BranchesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

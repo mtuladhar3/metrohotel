@@ -1,7 +1,7 @@
 // src/components/home/branches/BranchCard.tsx
 'use client';
 
-import { Branch } from './branchesData';
+import { Branch } from '@/data/branches';
 
 interface BranchCardProps {
   branch: Branch;
@@ -41,7 +41,7 @@ export default function BranchCard({ branch }: BranchCardProps) {
 
       {/* Title Banner */}
       <div className="p-3 sm:p-5 text-center">
-        <h3 className="font-serif text-sm sm:text-base lg:text-lg text-slate-900 font-normal leading-snug group-hover:text-amber-900 transition-colors">
+        <h3 className="text-sm sm:text-base lg:text-lg text-slate-900 font-normal leading-snug group-hover:text-amber-900 transition-colors">
           {branch.name}
         </h3>
       </div>

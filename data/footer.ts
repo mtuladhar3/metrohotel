@@ -1,4 +1,4 @@
-// src/components/layout/footer/footerData.ts
+// Shared footer links and site info.
 export interface FooterLink {
   label: string;
   href: string;

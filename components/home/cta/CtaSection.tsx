@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import VideoBackground from './VideoBackground';
 import SideCollage from './SideCollage';
 import CtaContent from './CtaContent';
-import { LEFT_COLLAGE_IMAGES, RIGHT_COLLAGE_IMAGES } from './ctaData';
+import { LEFT_COLLAGE_IMAGES, RIGHT_COLLAGE_IMAGES } from '@/data/cta';
 
 export default function CtaSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

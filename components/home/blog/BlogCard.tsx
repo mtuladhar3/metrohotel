@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
-import { BlogPost } from './blogData';
+import { BlogPost } from '@/data/blog';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -34,7 +34,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             </h3>
 
             {/* Circular Action Badge */}
-            <div className="w-10 h-10 rounded-full border border-slate-900/30 group-hover:border-amber-200 group-hover:bg-[#F2A765] flex items-center justify-center shrink-0 transition-all duration-300">
+            <div className="w-10 h-10 rounded-full border border-slate-900/30 group-hover:border-amber-500 group-hover:bg-[#F2A765] flex items-center justify-center shrink-0 transition-all duration-300">
               <ArrowDownRight className="w-4 h-4 text-slate-800 stroke-[2] group-hover:hidden" />
               <ArrowUpRight className="w-4 h-4 text-slate-900 stroke-[2.5] hidden group-hover:block" />
             </div>

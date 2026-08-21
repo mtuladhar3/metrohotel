@@ -86,7 +86,7 @@ export default function DestinationsSection() {
         <DestinationHeader />
 
         {/* Route Banner Bar */}
-        <div className="hidden lg:flex items-center justify-center gap-4 text-xs font-mono font-medium text-slate-500 uppercase tracking-widest mb-12 bg-white/60 backdrop-blur-md py-3 px-6 rounded-full border border-slate-200/80 w-max mx-auto shadow-sm">
+        <div className="hidden lg:flex items-center justify-center gap-4 text-xs font-medium text-slate-500 uppercase tracking-widest mb-12 bg-white/60 backdrop-blur-md py-3 px-6 rounded-full border border-slate-200/80 w-max mx-auto shadow-sm">
           <span>Kathmandu</span>
           <span className="text-amber-500">→</span>
           <span>Pokhara</span>

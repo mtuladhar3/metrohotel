@@ -1,16 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist } from "next/font/google"
 
 import "./globals.css"
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
+import Footer from "@/components/layout/Footer"
+import Header from "@/components/layout/Header"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-sans",
 })
 
 export default function RootLayout({
@@ -22,7 +20,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
+      className={cn("antialiased font-sans", geist.variable)}
     >
       <body>
         <ThemeProvider>

@@ -38,7 +38,7 @@ export default function RoomCard({ item, isActive }: RoomCardProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent" />
 
       {/* Top Tag Pill */}
-      <div className="absolute top-5 left-5 z-10 px-3 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/20 text-white font-mono text-[9px] sm:text-[10px] uppercase tracking-widest">
+      <div className="absolute top-5 left-5 z-10 px-3 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/20 text-white text-[9px] sm:text-[10px] uppercase tracking-widest">
         {item.tag}
       </div>
 
@@ -48,7 +48,7 @@ export default function RoomCard({ item, isActive }: RoomCardProps) {
           isActive ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mb-3 tracking-wide">
+        <h3 className="text-2xl sm:text-3xl text-white font-normal mb-3 tracking-wide">
           {item.title}
         </h3>
 

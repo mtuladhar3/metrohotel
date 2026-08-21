@@ -61,7 +61,7 @@ export default function AboutSection() {
   return (
     <section
       ref={containerRef}
-      className="relative z-30 w-full min-h-screen bg-[#FAF8F5] text-slate-900 py-12 px-6 lg:px-12 rounded-t-[2.5rem]  overflow-hidden"
+      className="relative z-30 w-full min-h-screen bg-[#FAF8F5] text-slate-900 py-12 px-6 lg:px-12 rounded-t-[2.5rem] overflow-hidden"
     >
       {/* Desktop Floating Overlay Layer */}
       <div className="hidden lg:block">

@@ -1,8 +1,8 @@
-// src/components/layout/footer/FooterBottomBar.tsx
+// Footer bottom bar with nav links and copyright.
 'use client';
 
 import Link from 'next/link';
-import { FOOTER_NAV_LINKS, FOOTER_INFO } from './footerData';
+import { FOOTER_NAV_LINKS, FOOTER_INFO } from '@/data/footer';
 
 export default function FooterBottomBar() {
   return (

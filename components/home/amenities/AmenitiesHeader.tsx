@@ -10,7 +10,7 @@ export default function AmenitiesHeader() {
         </span>
         <div className="w-8 h-[1px] bg-slate-500/50" />
       </div>
-      <h2 className="font-serif text-4xl sm:text-5xl text-white tracking-wide font-normal">
+      <h2 className="text-4xl sm:text-5xl text-white tracking-wide font-normal">
         Hotel Amenities
       </h2>
     </div>

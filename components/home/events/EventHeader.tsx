@@ -11,7 +11,7 @@ export default function EventHeader() {
         Unforgettable Occasions
       </span>
 
-      <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-900 font-normal leading-tight">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl text-slate-900 font-normal leading-tight">
         Host Your Event With Us
       </h2>
 

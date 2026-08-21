@@ -7,7 +7,7 @@ export default function OfferHeader() {
   return (
     <div className="offers-header flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
       <div>
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight ">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-tight">
           Special Offers, Exceptional Stays
         </h2>
       </div>

@@ -1,4 +1,4 @@
-// src/components/home/cta/ctaData.ts
+// Collage image sets for the homepage CTA section.
 export interface CollageImage {
   id: number;
   url: string;

@@ -36,7 +36,7 @@ export default function FloatingImages() {
   return (
     <>
       {/* 1. Desktop Animated Floating View (Hidden on Mobile & Tablet screens) */}
-      <div className="hidden lg:block  absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-hidden">
         {FLOATING_IMAGES.map((img) => (
           <div key={img.id} className={img.containerClass}>
             <img src={img.src} alt={img.alt} className="w-full rounded-2xl h-full object-cover" />

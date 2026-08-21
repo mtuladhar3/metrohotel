@@ -1,4 +1,4 @@
-// src/components/layout/footer/FooterSection.tsx
+// Site-wide footer section.
 'use client';
 
 import { useEffect, useRef } from 'react';

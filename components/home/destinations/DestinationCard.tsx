@@ -23,10 +23,10 @@ export default function DestinationCard({ destination, isLast }: DestinationCard
     <div className="destination-card relative group flex flex-col justify-between p-6 rounded-3xl bg-white border border-slate-200/80 hover:border-slate-400 transition-all duration-500 shadow-sm hover:shadow-xl">
       {/* Step Sequence Indicator */}
       <div className="flex items-center justify-between mb-4">
-        <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-amber-600 transition-colors">
+        <span className="text-xs font-semibold text-slate-400 group-hover:text-amber-600 transition-colors">
           {destination.step}
         </span>
-        <span className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-slate-100 text-slate-600">
+        <span className="text-[11px] px-2.5 py-1 rounded-md bg-slate-100 text-slate-600">
           {destination.propertiesCount}
         </span>
       </div>
@@ -43,7 +43,7 @@ export default function DestinationCard({ destination, isLast }: DestinationCard
       {/* City Title & Specs */}
       <div>
         <div className="flex items-center justify-between">
-          <h3 className="font-serif text-2xl text-slate-900">{destination.city}</h3>
+          <h3 className="text-2xl text-slate-900">{destination.city}</h3>
           <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-slate-950 group-hover:text-white flex items-center justify-center transition-all duration-300">
             <ArrowUpRight className="w-4 h-4" />
           </div>

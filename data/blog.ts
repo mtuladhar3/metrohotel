@@ -1,4 +1,4 @@
-// src/components/home/blog/blogData.ts
+// Blog post content for the homepage blog section.
 export interface BlogPost {
   id: number;
   title: string;

@@ -1,8 +1,9 @@
-// src/components/navbar/menuData.ts
+// Primary navigation menu structure.
 export interface SubMenuItem {
   title: string;
   href: string;
   image?: string;
+  description?: string;
 }
 
 export interface MenuItem {
@@ -36,34 +37,39 @@ export const NAV_MENU_ITEMS: MenuItem[] = [
       'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80',
     subMenu: [
       {
-        title: 'Prakriti Resort Maldives',
-        href: '/hotels/maldives',
+        title: 'Metro Hotel Kathmandu',
+        href: '/hotels/kathmandu',
+        description: 'Modern luxury nestled in the vibrant heart of the ancient valley.',
         image:
-          'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85',
       },
       {
-        title: 'Prakriti Sanctuary Bali',
-        href: '/hotels/bali',
+        title: 'Metro Hotel Chitwan',
+        href: '/hotels/chitwan',
+        description: 'A jungle sanctuary near quiet riverbanks and rich wildlife safaris.',
         image:
-          'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=1600&q=85',
       },
       {
-        title: 'Prakriti Retreat Fiji',
-        href: '/hotels/fiji',
+        title: 'Metro Hotel Pokhara',
+        href: '/hotels/pokhara',
+        description: 'Lakeside tranquility with breathtaking views of the Annapurna range.',
         image:
-          'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=85',
       },
       {
-        title: 'Prakriti Estate Seychelles',
-        href: '/hotels/seychelles',
+        title: 'Metro Hotel Dang',
+        href: '/hotels/dang',
+        description: 'Peaceful hospitality in the scenic and expansive Inner Terai valley.',
         image:
-          'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85',
       },
       {
-        title: 'Prakriti Haven Bora Bora',
-        href: '/hotels/bora-bora',
+        title: 'Metro Hotel Palpa',
+        href: '/hotels/palpa',
+        description: 'Hillside heritage, panoramic views, and traditional mountain charm.',
         image:
-          'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=85',
       },
     ],
   },

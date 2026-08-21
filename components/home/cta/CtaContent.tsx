@@ -20,7 +20,7 @@ export default function CtaContent() {
       </div>
 
       {/* Heading */}
-      <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-slate-900 font-normal leading-[1.1] tracking-tight mb-8">
+      <h2 className="text-4xl sm:text-5xl lg:text-6xl text-slate-900 font-normal leading-[1.1] tracking-tight mb-8">
         A Better Stay  <br /> Is Just a Booking Away
       </h2>
 

@@ -1,7 +1,7 @@
 // src/components/home/cta/SideCollage.tsx
 'use client';
 
-import { CollageImage } from './ctaData';
+import { CollageImage } from '@/data/cta';
 
 interface SideCollageProps {
   images: CollageImage[];
@@ -37,7 +37,7 @@ export default function SideCollage({
         {marqueeImages.map((img, index) => (
           <div
             key={`${img.id}-${index}`}
-            className="w-52 lg:w-60 aspect-[4/3] rounded-3xl overflow-hidden  border-2 border-white/60 shrink-0"
+            className="w-52 lg:w-60 aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/60 shrink-0"
           >
             <img
               src={img.url}

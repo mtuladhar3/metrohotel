@@ -2,7 +2,7 @@
 'use client';
 
 import FeatureIcon from './FeatureIcon';
-import { Feature } from './whyUsData';
+import { Feature } from '@/data/why-us';
 
 interface FeatureCardProps {
   feature: Feature;
@@ -23,7 +23,7 @@ export default function FeatureCard({ feature, isLast = false }: FeatureCardProp
         </div>
 
         {/* Feature Title */}
-        <h3 className="font-serif text-xl sm:text-2xl text-white font-normal leading-snug">
+        <h3 className="text-xl sm:text-2xl text-white font-normal leading-snug">
           {feature.title}
         </h3>
 
