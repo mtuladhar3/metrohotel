@@ -11,6 +11,7 @@ import HotelOverview from './HotelOverview';
 import HotelRoomGrid from './HotelRoomGrid';
 import HotelStickyHeader from './HotelStickyHeader';
 import HotelGallery from './HotelGallery';
+import HotelContactMap from './HotelContactMap';
 
 type HotelDetailPageProps = {
   hotel: Hotel;
@@ -72,6 +73,7 @@ export default function HotelDetailPage({ hotel }: HotelDetailPageProps) {
       <HotelFeatures features={hotel.features} />
       <HotelFaq faqs={hotel.faqs} />
       <HotelGallery hotel={hotel} />
+      <HotelContactMap />
     </main>
   );
 }
