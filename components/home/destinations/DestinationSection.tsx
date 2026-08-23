@@ -2,6 +2,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import DestinationHeader from './DestinationHeader';
 import DestinationCard, { DestinationData } from './DestinationCard';
 
@@ -48,8 +50,6 @@ export default function DestinationsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
-    const { ScrollTrigger } = require('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     if (!sectionRef.current) return;

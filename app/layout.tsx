@@ -1,29 +1,33 @@
-import { Geist } from "next/font/google"
+import { ThemeProvider } from "@teispace/next-themes"
+import { getTheme } from "@teispace/next-themes/server"
 
 import "./globals.css"
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils"
+import { ThemeHotkey } from "@/components/theme-hotkey"
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const initialTheme = await getTheme()
+
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased font-sans", geist.variable)}
+      className="antialiased font-sans"
     >
       <body>
-        <ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          initialTheme={initialTheme ?? undefined}
+        >
+          <ThemeHotkey />
           <Header />
           {children}
           <Footer />

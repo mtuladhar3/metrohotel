@@ -2,6 +2,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutHeader from './AboutHeader';
 import AboutLetter from './AboutLetter';
 import FloatingImages from './FloatingImages';
@@ -10,8 +12,6 @@ export default function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
-    const { ScrollTrigger } = require('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     if (!containerRef.current) return;

@@ -2,6 +2,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PropertyHeader from './PropertyHeader';
 import PropertyTabs from './PropertyTabs';
 import PropertyShowcase from './PropertyShowcase';
@@ -66,8 +68,6 @@ export default function PropertiesSection() {
 
   // GSAP Animations
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
-    const { ScrollTrigger } = require('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     if (!sectionRef.current) return;
@@ -107,7 +107,6 @@ export default function PropertiesSection() {
 
   // Fade animation trigger when active property changes
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
     gsap.fromTo(
       '.property-showcase-img',
       { opacity: 0.6, scale: 1.02 },

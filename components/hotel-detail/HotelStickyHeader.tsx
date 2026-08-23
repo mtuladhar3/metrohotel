@@ -7,9 +7,9 @@ import HotelAvailabilityModal from './HotelAvailabilityModal';
 const NAV_ITEMS = [
   { id: 'overview', label: 'Overview' },
   { id: 'accommodations', label: 'Accommodations' },
-  { id: 'restaurants-bars', label: 'Restaurants & Bars' },
-  { id: 'experiences', label: 'Experiences' },
-  { id: 'meetings-weddings', label: 'Meetings & Weddings' },
+  { id: 'offers', label: 'Offers' },
+  { id: 'facilities', label: 'Facilities' },
+  { id: 'faq', label: 'FAQs' },
   { id: 'gallery', label: 'Gallery' },
 ] as const;
 

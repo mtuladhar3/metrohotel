@@ -1,8 +1,6 @@
 // src/components/home/offers/OfferHeader.tsx
 'use client';
 
-import { Sparkles } from 'lucide-react';
-
 export default function OfferHeader() {
   return (
     <div className="offers-header flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">

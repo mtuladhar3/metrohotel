@@ -7,7 +7,6 @@ import { Building2, Calendar, Users, ChevronDown, Search } from 'lucide-react';
 export default function BookingBar() {
   const [selectedBranch, setSelectedBranch] = useState('Terrace Bali');
   const [checkIn, setCheckIn] = useState('');
-  const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState('2 Adults, 0 Children');
 
   return (

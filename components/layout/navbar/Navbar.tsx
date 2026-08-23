@@ -2,6 +2,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { NAV_MENU_ITEMS } from '@/data/menu';
@@ -18,8 +20,6 @@ export default function Navbar() {
   const otherMega = openMegaId && openMegaId !== 'hotels' ? activeMega : null;
 
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
-    const { ScrollTrigger } = require('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.from('.hero-navbar', {
@@ -136,6 +136,7 @@ export default function Navbar() {
 
             {/* Keep both menus mounted so hover bridge (pt-2) stays inside this wrapper */}
             <HotelsMegaMenu
+              key={hotelsMega ? 'hotels-open' : 'hotels-closed'}
               isOpen={Boolean(hotelsMega?.subMenu)}
               onClose={() => setOpenMegaId(null)}
               items={

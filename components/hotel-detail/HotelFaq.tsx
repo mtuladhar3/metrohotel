@@ -12,7 +12,7 @@ export default function HotelFaq({ faqs }: HotelFaqProps) {
   const [openId, setOpenId] = useState<string | null>(faqs[0]?.id ?? null);
 
   return (
-    <section id="meetings-weddings" className="scroll-mt-36 bg-white">
+    <section id="faq" className="scroll-mt-36 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-24">
         <div className="mb-10 max-w-2xl sm:mb-14">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-amber-700">FAQ</p>

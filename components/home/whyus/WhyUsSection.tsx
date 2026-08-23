@@ -2,6 +2,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WhyUsHeader from './WhyUsHeader';
 import FeatureCard from './FeatureCard';
 import { WHY_US_FEATURES } from '@/data/why-us';
@@ -10,8 +12,6 @@ export default function WhyUsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
-    const { ScrollTrigger } = require('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     if (!sectionRef.current) return;

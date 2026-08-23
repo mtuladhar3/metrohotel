@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { gsap } from 'gsap';
 import HeroTitle from './HeroTitle';
 import BottomBar from './BottomBar';
 import BookingBar from './BookingBar';
@@ -38,7 +39,6 @@ export default function HeroSection() {
 
   // Initial page load animation (Runs ONLY ONCE)
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
 
     // Static Booking Bar entrance animation on page load
     gsap.fromTo(
@@ -50,7 +50,6 @@ export default function HeroSection() {
 
   // Slide transition animation (Runs on slide change)
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
 
     // Title transition
     gsap.fromTo(

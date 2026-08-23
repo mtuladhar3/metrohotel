@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { SubMenuItem } from '@/data/menu';
 
 type HotelsMegaMenuProps = {
@@ -20,10 +20,6 @@ export default function HotelsMegaMenu({
 }: HotelsMegaMenuProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = items[activeIndex] ?? items[0];
-
-  useEffect(() => {
-    if (isOpen) setActiveIndex(0);
-  }, [isOpen]);
 
   if (!items.length) return null;
 

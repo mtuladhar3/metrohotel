@@ -12,7 +12,7 @@ export default function BranchHeader() {
          Your Stay, Wherever You Go
         </h2>
         <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed">
-          Whether you're seeking soulful relaxation or exciting exploration, Marina offers a thoughtful selection of activities to suit your pace.
+          Whether you&apos;re seeking soulful relaxation or exciting exploration, Marina offers a thoughtful selection of activities to suit your pace.
         </p>
       </div>
 

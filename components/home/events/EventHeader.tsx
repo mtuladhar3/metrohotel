@@ -20,7 +20,7 @@ export default function EventHeader() {
       </p>
 
       <Link
-        href="/events"
+        href="/meetings-events"
         className="inline-flex items-center gap-2 px-4 py-2 mt-2 rounded-full border border-amber-900/20 bg-amber-900/5 hover:bg-amber-900 hover:text-white text-slate-900 text-xs font-medium transition-all duration-300 group"
       >
         <span>Explore All Events</span>

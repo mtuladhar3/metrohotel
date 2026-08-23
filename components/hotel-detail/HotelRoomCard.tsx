@@ -178,7 +178,7 @@ export default function HotelRoomCard({ room }: HotelRoomCardProps) {
               {/* Gallery Display */}
               <div className="space-y-3">
                 {/* Main Feature View */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-slate-100 border border-slate-200">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg≈-slate-100 border border-slate-200">
                   <img
                     src={roomGallery[selectedImage]}
                     alt={room.name}

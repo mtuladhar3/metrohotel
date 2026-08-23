@@ -27,7 +27,7 @@ type HotelFeaturesProps = {
 
 export default function HotelFeatures({ features }: HotelFeaturesProps) {
   return (
-    <section id="experiences" className="scroll-mt-36 bg-slate-950 text-white">
+    <section id="facilities" className="scroll-mt-36 bg-slate-950 text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-24">
         <div className="mb-10 max-w-2xl sm:mb-14">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-amber-500">Facilities</p>

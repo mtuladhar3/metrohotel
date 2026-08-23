@@ -2,6 +2,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import EventHeader from './EventHeader';
 import EventCard from './EventCard';
 import { EVENTS_DATA } from '@/data/events';
@@ -11,8 +13,6 @@ export default function EventsSection() {
   const headerWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const gsap = require('gsap').default || require('gsap');
-    const { ScrollTrigger } = require('gsap/ScrollTrigger');
     gsap.registerPlugin(ScrollTrigger);
 
     if (!sectionRef.current || !headerWrapperRef.current) return;

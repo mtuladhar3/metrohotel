@@ -6,7 +6,7 @@ type HotelOffersProps = {
 
 export default function HotelOffers({ offers }: HotelOffersProps) {
   return (
-    <section id="restaurants-bars" className="scroll-mt-36 bg-[#f5f4ef]">
+    <section id="offers" className="scroll-mt-36 bg-[#f5f4ef]">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-24">
         <div className="mb-10 max-w-2xl sm:mb-14">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-amber-700">Offers</p>
