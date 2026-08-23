@@ -16,7 +16,7 @@ export default function Page() {
         description="Explore the places, flavours, and experiences that make every Metro Hotel stay memorable."
       />
 
-      <section className="w-full px-6 py-16 sm:px-12 sm:py-24 lg:px-16">
+      <section className="w-full px-6 py-16 sm:px-12 sm:py-24 lg:px-16 bg-white">
         <div className="mx-auto max-w-7xl">
           <BlogHeader />
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 lg:grid-cols-3">

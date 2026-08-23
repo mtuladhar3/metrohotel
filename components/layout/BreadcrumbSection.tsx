@@ -23,9 +23,10 @@ export default function BreadcrumbSection({
   crumbs,
 }: BreadcrumbSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-slate-600 px-6 py-24 text-center text-white sm:px-10 sm:py-32">
+    <section className="relative overflow-hidden bg-slate-600 px-6 pt-24 pb-32 text-center text-white sm:px-10 sm:pt-32 sm:pb-40">
       <VideoBackground />
-      <div className="relative mx-auto max-w-3xl pt-20">
+
+      <div className="relative z-10 mx-auto max-w-3xl pt-10">
         {crumbs && crumbs.length > 0 ? (
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-white/60">
@@ -48,11 +49,11 @@ export default function BreadcrumbSection({
           </nav>
         ) : null}
 
-        {/* {eyebrow ? (
+        {eyebrow ? (
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-amber-500">{eyebrow}</p>
-        ) : null} */}
+        ) : null}
 
-        <h1 className={`text-5xl leading-none sm:text-7xl ${eyebrow || crumbs ? 'mt-5' : ''}`}>
+        <h1 className={`text-5xl leading-tight sm:text-7xl ${eyebrow || crumbs ? 'mt-4' : ''}`}>
           {title}
         </h1>
 
@@ -61,6 +62,17 @@ export default function BreadcrumbSection({
             {description}
           </p>
         ) : null}
+      </div>
+
+      {/* Flush Bottom White Wave Cutout */}
+      <div className="absolute bottom-0 inset-x-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+        <svg
+          className="relative block w-full h-16 sm:h-24 md:h-28 text-[#ff] fill-current"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,120 L1440,120 L1440,40 C960,120 480,120 0,40 Z"></path>
+        </svg>
       </div>
     </section>
   );
