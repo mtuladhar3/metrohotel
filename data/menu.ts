@@ -107,13 +107,13 @@ export const NAV_MENU_ITEMS: MenuItem[] = [
       },
     ],
   },
-  {
-    id: 'gallery',
-    title: 'Gallery',
-    href: '/gallery',
-    bgImage:
-      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1920&q=80',
-  },
+  // {
+  //   id: 'gallery',
+  //   title: 'Gallery',
+  //   href: '/gallery',
+  //   bgImage:
+  //     'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1920&q=80',
+  // },
   {
     id: 'blog',
     title: 'Blog',
@@ -121,11 +121,11 @@ export const NAV_MENU_ITEMS: MenuItem[] = [
     bgImage:
       'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1920&q=80',
   },
-  {
-    id: 'contact',
-    title: 'Contact',
-    href: '/contact',
-    bgImage:
-      'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80',
-  },
+  // {
+  //   id: 'contact',
+  //   title: 'Contact',
+  //   href: '/contact',
+  //   bgImage:
+  //     'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80',
+  // },
 ];
