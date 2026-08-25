@@ -27,7 +27,7 @@ export default function HotelStickyHeader({
   isVisible,
   isScrollingUp,
   hotelName = 'Metro Hotel',
-  phone = '+31 20-5512000',
+  phone = '+977-9801234567',
 }: HotelStickyHeaderProps) {
   const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);
   const [activeId, setActiveId] = useState<NavId>('overview');
@@ -82,9 +82,9 @@ export default function HotelStickyHeader({
         <div className="border-b border-slate-100 bg-slate-50/50 px-4 py-2.5 sm:px-10">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-2 sm:px-6">
             <div className="min-w-0 flex-1">
-              <h2 className="truncate text-xs font-bold tracking-wider text-slate-900 uppercase sm:text-sm">
+              <div className="truncate text-xs font-bold tracking-wider text-slate-900 uppercase sm:text-sm">
                 {hotelName}
-              </h2>
+              </div>
             </div>
 
             <div className="flex shrink-0 items-center gap-2 sm:gap-4">

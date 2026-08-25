@@ -1,18 +1,19 @@
 import { EVENTS_DATA } from '@/data/events';
-import BreadcrumbSection from '@/components/layout/BreadcrumbSection';
 import EventCard from '@/components/events/EventCard';
+ import BreadcrumbSection from '@/components/layout/BreadcrumbSection';
+import { BREADCRUMB_DATA } from '@/data/breadcrumbs';
 
 export default function EventsPage() {
+
+  const data = BREADCRUMB_DATA.events;
+
   return (
     <main className="bg-[#fff] text-slate-900">
       <BreadcrumbSection
-        crumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Events' },
-        ]}
-        eyebrow="Metro Event Collection"
-        title="Curated Experiences & Gatherings"
-        description="Discover our upcoming galas, private banquets, and exclusive cultural events."
+        eyebrow={data.eyebrow}
+        title={data.title}
+        description={data.description}
+        bgImage={data.bgImage}
       />
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-24">

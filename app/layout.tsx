@@ -1,18 +1,21 @@
 import { ThemeProvider } from "@teispace/next-themes"
-import { getTheme } from "@teispace/next-themes/server"
-
 import "./globals.css"
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import { ThemeHotkey } from "@/components/theme-hotkey"
+import type { Metadata } from "next";
 
-export default async function RootLayout({
+export const metadata: Metadata = {
+  title: "Your Website Title",
+  description: "A concise description of your website for SEO and search results.",
+};
+
+// Remove 'async' from RootLayout
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const initialTheme = await getTheme()
-
   return (
     <html
       lang="en"
@@ -25,7 +28,6 @@ export default async function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-          initialTheme={initialTheme ?? undefined}
         >
           <ThemeHotkey />
           <Header />

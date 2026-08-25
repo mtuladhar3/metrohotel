@@ -3,6 +3,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import type { SubMenuItem } from '@/data/menu';
 
 type HotelsMegaMenuProps = {
@@ -32,7 +33,7 @@ export default function HotelsMegaMenu({
       }`}
     >
       <div className="h-[380px] overflow-hidden rounded-b-xl border border-white/10 bg-[#111111] text-white shadow-2xl">
-        <div className="grid h-full grid-cols-[minmax(200px,240px)_1fr]">
+        <div className="grid h-full grid-cols-[minmax(220px,260px)_1fr]">
           {/* Left: hotel names */}
           <div className="flex h-full flex-col justify-between border-r border-white/10 bg-[#161616] px-6 py-8">
             <ul className="space-y-0.5">
@@ -45,13 +46,20 @@ export default function HotelsMegaMenu({
                       onClick={onClose}
                       onMouseEnter={() => setActiveIndex(index)}
                       onFocus={() => setActiveIndex(index)}
-                      className={`block py-2.5 text-base transition-colors ${
+                      className={`group flex items-center justify-between py-2.5 text-base transition-colors ${
                         isActive
                           ? 'font-medium text-amber-500'
                           : 'font-normal text-white/70 hover:text-amber-500'
                       }`}
                     >
-                      {item.title}
+                      <span>{item.title}</span>
+                      <ArrowRight
+                        className={`h-4 w-4 shrink-0 transition-all duration-300 ${
+                          isActive
+                            ? 'translate-x-0 opacity-100 text-amber-500'
+                            : '-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'
+                        }`}
+                      />
                     </Link>
                   </li>
                 );
@@ -59,12 +67,12 @@ export default function HotelsMegaMenu({
             </ul>
 
             <Link
-              href={viewAllHref}
-              onClick={onClose}
-              className="mt-8 inline-flex w-fit text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 transition hover:text-amber-500"
-            >
-              View all hotels
-            </Link>
+  href={viewAllHref}
+  onClick={onClose}
+  className="mt-8 inline-flex w-fit items-center gap-2 rounded-lg border border-white/20 px-3.5 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm transition-all duration-300 hover:border-amber-500/50 hover:bg-amber-500/10 hover:text-amber-500"
+>
+  View all hotels
+</Link>
           </div>
 
           {/* Right: image preview */}
@@ -96,9 +104,10 @@ export default function HotelsMegaMenu({
                 <Link
                   href={active.href}
                   onClick={onClose}
-                  className="mt-6 inline-flex w-fit border border-white bg-black/20 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white backdrop-blur-sm transition hover:bg-white hover:text-slate-950"
+                  className="group mt-6 inline-flex w-fit items-center gap-2 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white backdrop-blur-sm transition hover:text-amber-500"
                 >
-                  Learn more
+                  <span>Learn more</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
             ) : null}

@@ -1,18 +1,18 @@
 import { HOTELS } from '@/data/hotels';
 import BreadcrumbSection from '@/components/layout/BreadcrumbSection';
 import HotelCard from './HotelCard';
+import { BREADCRUMB_DATA } from '@/data/breadcrumbs';
 
 export default function HotelsPage() {
+  const data = BREADCRUMB_DATA.hotels;
   return (
+
     <main className="bg-[#fff] text-slate-900">
       <BreadcrumbSection
-        crumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Hotels' },
-        ]}
-        eyebrow="Metro Hotel Collection"
-        title="Find your next stay"
-        description="Discover our collection of remarkable hotels, each designed for unhurried and memorable escapes."
+        eyebrow={data.eyebrow}
+        title={data.title}
+        description={data.description}
+        bgImage={data.bgImage}
       />
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-24 bg-white">

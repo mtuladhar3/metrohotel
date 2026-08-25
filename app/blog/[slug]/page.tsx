@@ -164,7 +164,7 @@ export default async function Page({ params }: PageProps) {
             </div>
 
             {/* Highlight Section */}
-            <section className="pt-6 border-t border-stone-200/70 space-y-2">
+            <section className="pt-6  space-y-2">
               <span className="text-[11px] font-semibold tracking-[0.2em] text-amber-800 uppercase">
                 The Experience
               </span>
@@ -182,7 +182,7 @@ export default async function Page({ params }: PageProps) {
             </blockquote>
 
             {/* Clean Standard List with Lead Icons */}
-            <section className="pt-6 border-t border-stone-200/70 space-y-3">
+            <section className="pt-6 space-y-3">
               <span className="text-[11px] font-semibold tracking-[0.2em] text-amber-800 uppercase">
                 Details
               </span>
@@ -201,7 +201,7 @@ export default async function Page({ params }: PageProps) {
             </section>
 
             {/* Clean Step-by-Step Guide with Icons */}
-            <section className="pt-6 border-t border-stone-200/70 space-y-3">
+            <section className="pt-6 space-y-3">
               <span className="text-[11px] font-semibold tracking-[0.2em] text-amber-800 uppercase">
                 Your Evening
               </span>
@@ -279,22 +279,6 @@ export default async function Page({ params }: PageProps) {
                     </Link>
                   )
                 })}
-              </div>
-
-              {/* Newsletter Card */}
-              <div className="p-5 rounded-2xl bg-amber-900/5 border border-amber-900/10 space-y-2 mt-8">
-                <p className="text-xs font-semibold uppercase tracking-wider text-amber-900">
-                  Stay Informed
-                </p>
-                <p className="text-xs text-stone-600 leading-relaxed">
-                  Subscribe to receive curated hotel stories and seasonal dining menu previews.
-                </p>
-                <Link
-                  href="/blog"
-                  className="inline-block text-[11px] font-semibold uppercase tracking-widest text-amber-900 hover:text-stone-950 pt-1"
-                >
-                  Join Newsletter →
-                </Link>
               </div>
 
             </div>

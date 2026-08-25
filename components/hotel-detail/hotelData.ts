@@ -166,16 +166,23 @@ export const HOTELS: Hotel[] = [
       {
         id: 'valley-escape',
         title: 'Capital City Escape',
-        description: 'Enjoy complementary breakfast and late airport checkout when stay 3 nights or longer.',
+        description: 'Enjoy complementary breakfast and late airport checkout when staying 3 nights or longer.',
         badge: 'Popular',
         image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85',
       },
       {
         id: 'cultural-weekend',
-        title: 'Heritage Experience',
-        description: 'Includes guided morning walks through local heritage sites and complimentary tea service.',
-        badge: 'Culture',
+        title: 'Heritage & Spa Discovery',
+        description: 'Includes guided morning walks through local heritage sites and complimentary herbal spa treatments.',
+        badge: 'Culture & Wellness',
         image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85',
+      },
+      {
+        id: 'urban-honeymoon',
+        title: 'Romantic Valley Getaway',
+        description: 'A bottle of sparkling wine on arrival, private rooftop dinner for two, and signature couples aromatherapy.',
+        badge: 'Romance',
+        image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=85',
       },
     ],
     faqs: [
@@ -243,7 +250,7 @@ export const HOTELS: Hotel[] = [
         guests: '2–3 guests',
         description: 'Overlooking the Rapti river with sunset views and outdoor lounging space.',
         image:
-          'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85',
+          'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85',
         priceFrom: 'From $240 / night',
       },
       {
@@ -266,9 +273,16 @@ export const HOTELS: Hotel[] = [
       {
         id: 'safari-package',
         title: 'Wildlife & Safari Special',
-        description: 'Includes daily jeep safaris, canoe rides, and guided forest walks.',
+        description: 'Includes daily jeep safaris, canoe rides on the river, and guided jungle forest walks.',
         badge: 'Adventure',
         image: 'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=1200&q=85',
+      },
+      {
+        id: 'riverfront-all-inclusive',
+        title: 'Wilderness & Cultural Stay',
+        description: 'Full-board gourmet organic dining, evening Tharu cultural dance shows, and complimentary transfers.',
+        badge: 'All-Inclusive',
+        image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85',
       },
     ],
     faqs: [
@@ -349,9 +363,16 @@ export const HOTELS: Hotel[] = [
       {
         id: 'wellness-retreat',
         title: 'Pokhara Wellness Retreat',
-        description: 'Daily yoga sessions, daily spa credits, and complimentary boat rides.',
+        description: 'Daily sunrise yoga sessions, daily spa credits, and complimentary lakeside boat rides.',
         badge: 'Relaxation',
         image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=85',
+      },
+      {
+        id: 'annapurna-trekker-recharge',
+        title: 'Trekker’s Himalayan Sanctuary',
+        description: 'Special post-trek relief package featuring deep tissue therapy, late checkout, and healthy dining options.',
+        badge: 'Active Travel',
+        image: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=85',
       },
     ],
     faqs: [
@@ -420,9 +441,16 @@ export const HOTELS: Hotel[] = [
       {
         id: 'business-stay',
         title: 'Extended Corporate Stay',
-        description: 'Special discounted rates for extended business stays, including laundry and breakfast.',
+        description: 'Special discounted rates for long-term business travelers, including complimentary laundry and hot breakfast.',
         badge: 'Corporate',
         image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85',
+      },
+      {
+        id: 'valley-weekend-break',
+        title: 'Valley Leisure Package',
+        description: 'Enjoy a 2-night peaceful weekend retreat with complimentary dinner and regional temple excursion transfers.',
+        badge: 'Getaway',
+        image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=900&q=85',
       },
     ],
     faqs: [
@@ -494,6 +522,13 @@ export const HOTELS: Hotel[] = [
         description: 'Complimentary guided walk through historic Tansen bazaar and Rani Mahal excursion planning.',
         badge: 'Culture',
         image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85',
+      },
+      {
+        id: 'rani-mahal-romance',
+        title: 'Historic Taj of Nepal Escapade',
+        description: 'Includes private jeep transportation to Rani Mahal along the Kaligandaki river with a picnic lunch.',
+        badge: 'Excursion',
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85',
       },
     ],
     faqs: [

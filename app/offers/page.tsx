@@ -1,5 +1,6 @@
 import BreadcrumbSection from '@/components/layout/BreadcrumbSection';
 import { MapPin, ArrowRight, Tag } from 'lucide-react';
+import { BREADCRUMB_DATA } from '@/data/breadcrumbs';
 
 export interface OfferData {
   id: number;
@@ -42,16 +43,14 @@ const OFFERS: OfferData[] = [
 ];
 
 export default function Page() {
+  const data = BREADCRUMB_DATA.offers;
   return (
     <main className="bg-[#f5f5f3] text-slate-900">
       <BreadcrumbSection
-        crumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Offers' },
-        ]}
-        eyebrow="Metro Journal"
-        title="Special Offers, Exceptional Stays"
-        description="Explore the places, flavours, and experiences that make every Metro Hotel stay memorable."
+        eyebrow={data.eyebrow}
+        title={data.title}
+        description={data.description}
+        bgImage={data.bgImage}
       />
 
       <section className="relative z-30 bg-white text-black py-24 px-6 lg:px-16 overflow-hidden">

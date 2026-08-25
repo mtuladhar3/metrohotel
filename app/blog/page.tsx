@@ -2,18 +2,18 @@ import BlogCard from '@/components/home/blog/BlogCard';
 import BlogHeader from '@/components/home/blog/BlogHeader';
 import BreadcrumbSection from '@/components/layout/BreadcrumbSection';
 import { BLOG_POSTS_DATA } from '@/data/blog';
+import { BREADCRUMB_DATA } from '@/data/breadcrumbs';
 
 export default function Page() {
-  return (
+  const data = BREADCRUMB_DATA.blog;
+
+    return (
     <main className="bg-[#f5f5f3] text-slate-900">
       <BreadcrumbSection
-        crumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Blog' },
-        ]}
-        eyebrow="Metro Journal"
-        title="Stories for Your Next Stay"
-        description="Explore the places, flavours, and experiences that make every Metro Hotel stay memorable."
+        eyebrow={data.eyebrow}
+        title={data.title}
+        description={data.description}
+        bgImage={data.bgImage}
       />
 
       <section className="w-full px-6 py-16 sm:px-12 sm:py-24 lg:px-16 bg-white">

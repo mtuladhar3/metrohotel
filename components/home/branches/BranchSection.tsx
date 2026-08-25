@@ -1,17 +1,19 @@
 // src/components/home/branches/BranchesSection.tsx
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BranchHeader from './BranchHeader';
 import BranchCard from './BranchCard';
-import BranchControls from './BranchControls';
 import { BRANCHES_DATA } from '@/data/branches';
 
 export default function BranchesSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Maximum index calculation
+  const maxIndex = BRANCHES_DATA.length - 3;
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -19,7 +21,6 @@ export default function BranchesSection() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Header Animation
       gsap.from('.branch-header-anim', {
         y: 40,
         opacity: 0,
@@ -31,7 +32,6 @@ export default function BranchesSection() {
         },
       });
 
-      // Staggered Cards Reveal Animation
       gsap.from('.branch-card-item', {
         y: 60,
         opacity: 0,
@@ -44,7 +44,6 @@ export default function BranchesSection() {
         },
       });
 
-      // Controls Animation
       gsap.from('.branch-controls-anim', {
         opacity: 0,
         duration: 0.8,
@@ -59,43 +58,43 @@ export default function BranchesSection() {
     return () => ctx.revert();
   }, []);
 
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (!scrollContainerRef.current) return;
-    const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
-    scrollContainerRef.current.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth',
-    });
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#F5F4EF] text-slate-900 py-16 sm:py-24 px-0 lg:px-12 overflow-hidden"
+      className="w-full bg-[#F5F4EF] text-slate-900 py-16 sm:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden"
     >
-      <div className="px-4 sm:px-8 lg:px-0">
-        <BranchHeader />
-      </div>
+      <div className="max-w-7xl mx-auto">
+        {/* FIX 1: Pass navigation props into BranchHeader */}
+        <BranchHeader onPrev={handlePrev} onNext={handleNext} />
 
-      {/* Grid on Desktop (lg) / Centered Scroll Carousel on Mobile */}
-      <div
-        ref={scrollContainerRef}
-        className="branch-grid-container flex lg:grid lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-4 overflow-x-auto lg:overflow-visible no-scrollbar py-12 px-6 sm:px-12 lg:px-0 scroll-smooth snap-x snap-mandatory"
-      >
-        {BRANCHES_DATA.map((branch) => (
+        {/* Carousel Viewport Container */}
+        <div className="w-full overflow-hidden py-6">
           <div
-            key={branch.id}
-            className="branch-card-item min-w-[80vw] sm:min-w-[320px] lg:min-w-0 flex-1 snap-center"
+            className="branch-grid-container flex gap-6 transition-transform duration-500 ease-out"
+            style={{
+              // FIX 2: Correct transform calculation matching card width + gap on desktop
+              transform: `translateX(calc(-${currentIndex} * ((100% - 48px) / 3 + 24px)))`,
+            }}
           >
-            <BranchCard branch={branch} />
+            {BRANCHES_DATA.map((branch) => (
+              <div
+                key={branch.id}
+                className="branch-card-item w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)] flex-shrink-0 flex flex-col"
+              >
+                <BranchCard branch={branch} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-
-      <BranchControls
-        onPrev={() => handleScroll('left')}
-        onNext={() => handleScroll('right')}
-      />
     </section>
   );
 }

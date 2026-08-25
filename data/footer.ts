@@ -23,8 +23,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 export const FOOTER_INFO = {
-  address: '66 broklyn golden street,',
-  city: 'New York 10030',
+  address: 'Kathmandu, Nepal',
+  city: '',
   copyright: 'Copyright © 2026 Hotel Metro. All Rights Reserved. Developed By Webtech Nepal.',
   ctaText: 'Book Your Stay',
   ctaHref: '/reserve',

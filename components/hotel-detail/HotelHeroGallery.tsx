@@ -95,7 +95,7 @@ export default function HotelHeroGallery({ hotel }: HotelHeroGalleryProps) {
 
           <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-7xl flex-col justify-end px-6 pb-10 pt-32 sm:min-h-[85vh] sm:px-10 sm:pb-20">
             {/* Breadcrumb Navigation */}
-            <nav aria-label="Breadcrumb" className="mb-6">
+            {/* <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-white/60">
                 <li>
                   <Link href="/" className="transition-colors hover:text-amber-500">
@@ -111,7 +111,7 @@ export default function HotelHeroGallery({ hotel }: HotelHeroGalleryProps) {
                 <li aria-hidden="true">/</li>
                 <li className="text-amber-500">{hotel.name}</li>
               </ol>
-            </nav>
+            </nav> */}
 
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-amber-500">
               {hotel.location}
