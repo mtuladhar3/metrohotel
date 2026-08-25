@@ -124,7 +124,7 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
                           {isActive && (
                             <motion.div
                               layoutId="liquidAura"
-                              className="absolute -inset-x-6 -inset-y-3 -z-10 rounded-full border border-amber-400/40 blur-md"
+                              className="absolute -inset-x-6 -inset-y-3 -z-10 rounded-full border border-amber-500/40 blur-md"
                               transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                             />
                           )}
