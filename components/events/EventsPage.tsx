@@ -4,7 +4,7 @@ import EventCard from '@/components/events/EventCard';
 
 export default function EventsPage() {
   return (
-    <main className="bg-[#f5f4ef] text-slate-900">
+    <main className="bg-[#fff] text-slate-900">
       <BreadcrumbSection
         crumbs={[
           { label: 'Home', href: '/' },

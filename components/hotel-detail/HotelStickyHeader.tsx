@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { id: 'facilities', label: 'Facilities' },
   { id: 'faq', label: 'FAQs' },
   { id: 'gallery', label: 'Gallery' },
+  { id: 'contact', label: 'Contact' },
 ] as const;
 
 type NavId = (typeof NAV_ITEMS)[number]['id'];
