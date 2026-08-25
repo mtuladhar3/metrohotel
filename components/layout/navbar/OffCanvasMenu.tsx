@@ -1,9 +1,8 @@
-// Full-screen off-canvas navigation menu.
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ChevronDown, X } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { NAV_MENU_ITEMS, MenuItem } from '@/data/menu';
 
@@ -15,48 +14,25 @@ interface OffCanvasMenuProps {
 const DEFAULT_BG_IMAGE =
   'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80';
 
+// Circle mask expansion animation
 const radialMaskVariants: Variants = {
-  hidden: { clipPath: 'circle(0% at 0% 0%)' },
+  hidden: { 
+    clipPath: 'circle(0% at 0% 0%)',
+  },
   visible: {
     clipPath: 'circle(170% at 0% 0%)',
-    transition: {
-      duration: 0.85,
+    transition: { 
+      duration: 0.75, 
       ease: [0.76, 0, 0.24, 1],
       when: 'beforeChildren',
     },
   },
   exit: {
     clipPath: 'circle(0% at 0% 0%)',
-    transition: {
-      duration: 0.65,
+    transition: { 
+      duration: 0.55, 
       ease: [0.76, 0, 0.24, 1],
     },
-  },
-};
-
-const bgZoomVariants: Variants = {
-  hidden: { scale: 1.15, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] },
-  },
-};
-
-const listContainerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.05, delayChildren: 0.15 },
-  },
-};
-
-const textItemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.215, 0.61, 0.355, 1] },
   },
 };
 
@@ -66,7 +42,6 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
 
   const currentBackgroundImage =
     hoveredSubImage || activeItem.bgImage || DEFAULT_BG_IMAGE;
-  const hasSubMenu = Boolean(activeItem.subMenu && activeItem.subMenu.length > 0);
 
   const handleParentClick = (item: MenuItem, e: React.MouseEvent) => {
     if (item.subMenu && item.subMenu.length > 0) {
@@ -84,26 +59,27 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="fixed inset-0 z-50 overflow-hidden bg-slate-950 will-change-[clip-path]"
+          className="fixed inset-0 z-50 overflow-hidden bg-black font-sans text-white select-none will-change-[clip-path]"
         >
-          {/* Background Layer */}
+          {/* Background Layer with Dark Overlay */}
           <motion.div
             key={currentBackgroundImage}
-            variants={bgZoomVariants}
-            initial="hidden"
-            animate="visible"
-            className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700 ease-out"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 z-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${currentBackgroundImage})` }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/90 md:bg-gradient-to-r md:from-black/90 md:via-black/75 md:to-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/95 backdrop-blur-[3px]" />
           </motion.div>
 
-          {/* Header Bar */}
-          <div className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between px-5 py-5 sm:px-8 sm:py-6 lg:px-12 lg:py-8">
+          {/* Full-Width Header Bar */}
+          <header className="absolute top-0 right-0 left-0 z-30 flex items-center justify-between px-6 py-6 sm:px-12">
             <Link
               href="/"
               onClick={onClose}
-              className="text-xl tracking-wide text-white transition-opacity hover:opacity-90 sm:text-2xl lg:text-3xl"
+              className="text-lg font-light tracking-widest uppercase transition-opacity hover:opacity-80 sm:text-xl"
             >
               Hotel Metro
             </Link>
@@ -112,95 +88,92 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
               type="button"
               onClick={onClose}
               aria-label="Close menu"
-              className="cursor-pointer rounded-full border border-white/10 bg-black/30 p-2.5 text-white/80 backdrop-blur-md transition-colors hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white/80 backdrop-blur-md transition-all hover:scale-105 hover:border-white hover:bg-white hover:text-black"
             >
-              <X className="h-5 w-5 sm:h-6 sm:w-6" />
+              <X className="h-5 w-5" />
             </button>
-          </div>
+          </header>
 
-          {/* Navigation Area */}
-          <div className="relative z-10 flex h-full w-full flex-col overflow-y-auto px-5 pt-24 pb-10 sm:px-8 sm:pt-28 sm:pb-12 md:justify-center md:overflow-hidden lg:px-12 lg:pt-0 lg:pb-0">
-            <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-8 md:my-auto md:grid-cols-12 md:items-center md:gap-10">
-              {/* Main Links */}
-              <motion.div
-                variants={listContainerVariants}
-                initial="hidden"
-                animate="visible"
-                className={`${
-                  hasSubMenu ? 'md:col-span-7' : 'md:col-span-12'
-                } flex w-full flex-col gap-2 sm:gap-3 md:gap-4`}
-              >
+          {/* Main Navigation Area */}
+          <div className="relative z-10 flex h-full w-full flex-col justify-center px-8 pt-24 pb-12 sm:px-16">
+            <div className="mx-auto flex w-full max-w-3xl flex-col">
+              
+              <div className="flex flex-col gap-6">
                 {NAV_MENU_ITEMS.map((item) => {
                   const isActive = activeItem.id === item.id;
                   const itemHasSub = Boolean(item.subMenu && item.subMenu.length > 0);
 
                   return (
-                    <motion.div
-                      key={item.id}
-                      variants={textItemVariants}
-                      className="flex w-full flex-col"
-                    >
+                    <div key={item.id} className="relative flex flex-col">
                       <div
+                        onClick={(e) => {
+                          if (itemHasSub) {
+                            handleParentClick(item, e);
+                          } else {
+                            onClose();
+                          }
+                        }}
                         onMouseEnter={() => {
                           setActiveItem(item);
                           setHoveredSubImage(null);
                         }}
-                        className="group flex w-full cursor-pointer items-center gap-3 sm:w-fit sm:gap-4"
+                        className="group flex cursor-pointer items-center justify-between py-1"
                       >
-                        <Link
-                          href={item.href}
-                          onClick={(e) => {
-                            if (itemHasSub) {
-                              handleParentClick(item, e);
-                            } else {
-                              onClose();
-                            }
-                          }}
-                          className={`min-w-0 flex-1 whitespace-normal break-words text-3xl leading-tight font-normal tracking-wide transition-all duration-300 sm:flex-none sm:text-4xl md:text-5xl ${
-                            isActive
-                              ? 'translate-x-0 text-amber-400 sm:translate-x-2'
-                              : 'text-white/85 hover:text-white'
-                          }`}
-                        >
-                          {item.title}
-                        </Link>
+                        {/* Soft Aura Highlight behind active menu item */}
+                        <div className="relative flex items-center">
+                          {isActive && (
+                            <motion.div
+                              layoutId="liquidAura"
+                              className="absolute -inset-x-6 -inset-y-3 -z-10 rounded-full border border-amber-400/40 blur-md"
+                              transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                            />
+                          )}
 
-                        {itemHasSub ? (
-                          <ChevronDown
-                            onClick={(e) => handleParentClick(item, e)}
-                            className={`h-5 w-5 shrink-0 text-amber-400 transition-transform duration-300 sm:h-6 sm:w-6 ${
-                              isActive ? 'rotate-180' : 'rotate-0'
-                            }`}
-                          />
-                        ) : (
-                          <ArrowRight
-                            className={`h-5 w-5 shrink-0 text-amber-400 transition-all duration-300 sm:h-6 sm:w-6 ${
+                          <Link
+                            href={item.href}
+                            onClick={(e) => {
+                              if (itemHasSub) handleParentClick(item, e);
+                            }}
+                            className={`text-4xl font-light tracking-tight transition-all duration-300 sm:text-5xl ${
                               isActive
-                                ? 'translate-x-0 opacity-100'
-                                : 'hidden -translate-x-4 opacity-0 sm:block'
+                                ? 'font-normal text-amber-500'
+                                : 'text-white/80 hover:text-white'
+                            }`}
+                          >
+                            {item.title}
+                          </Link>
+                        </div>
+
+                        {/* Submenu Indicator Arrow */}
+                        {itemHasSub && (
+                          <ChevronDown
+                            className={`h-6 w-6 text-amber-400 transition-transform duration-300 ${
+                              isActive ? 'rotate-180' : 'opacity-40 group-hover:opacity-100'
                             }`}
                           />
                         )}
                       </div>
 
-                      {/* Mobile Inline Sub-menu */}
+                      {/* Accordion Submenu Items */}
                       <AnimatePresence>
                         {isActive && itemHasSub && (
                           <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="my-2 flex flex-col gap-3 overflow-hidden border-l-2 border-amber-400/50 py-2 pr-2 pl-4 md:hidden"
+                            initial={{ opacity: 0, height: 0, y: -5 }}
+                            animate={{ opacity: 1, height: 'auto', y: 0 }}
+                            exit={{ opacity: 0, height: 0, y: -5 }}
+                            transition={{ duration: 0.35, ease: 'easeOut' }}
+                            className="mt-3 ml-2 flex flex-col gap-3.5 border-l-2 border-amber-400/40 pl-6"
                           >
                             {item.subMenu!.map((sub, idx) => (
                               <Link
                                 key={idx}
                                 href={sub.href}
                                 onClick={onClose}
-                                onTouchStart={() => {
+                                onMouseEnter={() => {
                                   if (sub.image) setHoveredSubImage(sub.image);
                                 }}
-                                className="text-base leading-snug text-white/90 transition-colors hover:text-amber-400 sm:text-lg"
+                                onMouseLeave={() => setHoveredSubImage(null)}
+                                className="text-lg font-light tracking-wide text-white/90 transition-all hover:translate-x-2 hover:text-amber-300 sm:text-xl"
                               >
                                 {sub.title}
                               </Link>
@@ -208,36 +181,11 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </motion.div>
+                    </div>
                   );
                 })}
-              </motion.div>
+              </div>
 
-              {/* Desktop Side Sub-menu */}
-              {hasSubMenu && (
-                <motion.div
-                  key={activeItem.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="hidden min-h-[240px] flex-col justify-center gap-3 border-l border-white/20 pl-10 md:col-span-5 md:flex lg:pl-12"
-                >
-                  {activeItem.subMenu!.map((sub, idx) => (
-                    <Link
-                      key={idx}
-                      href={sub.href}
-                      onClick={onClose}
-                      onMouseEnter={() => {
-                        if (sub.image) setHoveredSubImage(sub.image);
-                      }}
-                      onMouseLeave={() => setHoveredSubImage(null)}
-                      className="text-lg text-white/90 transition-all duration-200 hover:translate-x-2 hover:text-amber-400 sm:text-xl"
-                    >
-                      {sub.title}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
             </div>
           </div>
         </motion.div>
