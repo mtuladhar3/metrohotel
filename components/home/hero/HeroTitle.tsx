@@ -12,9 +12,9 @@ export default function HeroTitle({ title, subtitle }: HeroTitleProps) {
       <div className="hero-text text-6xl sm:text-8xl md:text-9xl tracking-tight text-white/95 leading-none select-none">
         {title}
       </div>
-      <h1 className="hero-text text-6xl sm:text-8xl md:text-9xl tracking-tight text-white/90 leading-none select-none -mt-2 sm:-mt-6">
+      <div className="hero-text text-6xl sm:text-8xl md:text-9xl tracking-tight text-white/90 leading-none select-none -mt-2 sm:-mt-6">
         {subtitle}
-      </h1>
+      </div>
     </div>
   );
 }
