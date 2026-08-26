@@ -8,9 +8,9 @@ export default function AboutHeader() {
         ✦
       </div> */}
 
-      <span className="text-[11px] uppercase tracking-[0.25em] text-slate-500 font-medium">
-        Welcome to Hotel Metro 
-      </span>
+      <span className="text-[11px] uppercase tracking-[0.25em] text-slate-700 font-semibold">
+  WELCOME TO HOTEL METRO
+</span>
 
       <h2 className="text-4xl sm:text-6xl lg:text-6xl text-slate-900 tracking-tight leading-[1.1] max-w-3xl">
        We Don’t Just Host Stays, We Create Moments
