@@ -26,11 +26,10 @@ export default function HotelsMegaMenu({
 
   return (
     <div
-      className={`absolute top-full left-0 z-40 w-full pt-2 transition duration-300 ${
-        isOpen
+      className={`absolute top-full left-0 z-40 w-full pt-2 transition duration-300 ${isOpen
           ? 'pointer-events-auto visible translate-y-0 opacity-100'
           : 'pointer-events-none invisible -translate-y-1 opacity-0'
-      }`}
+        }`}
     >
       <div className="h-[380px] overflow-hidden rounded-b-xl border border-white/10 bg-[#111111] text-white shadow-2xl">
         <div className="grid h-full grid-cols-[minmax(220px,260px)_1fr]">
@@ -46,19 +45,17 @@ export default function HotelsMegaMenu({
                       onClick={onClose}
                       onMouseEnter={() => setActiveIndex(index)}
                       onFocus={() => setActiveIndex(index)}
-                      className={`group flex items-center justify-between py-2.5 text-base transition-colors ${
-                        isActive
+                      className={`group flex items-center justify-between py-2.5 text-base transition-colors ${isActive
                           ? 'font-medium text-amber-500'
                           : 'font-normal text-white/70 hover:text-amber-500'
-                      }`}
+                        }`}
                     >
                       <span>{item.title}</span>
                       <ArrowRight
-                        className={`h-4 w-4 shrink-0 transition-all duration-300 ${
-                          isActive
+                        className={`h-4 w-4 shrink-0 transition-all duration-300 ${isActive
                             ? 'translate-x-0 opacity-100 text-amber-500'
                             : '-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'
-                        }`}
+                          }`}
                       />
                     </Link>
                   </li>
@@ -67,12 +64,12 @@ export default function HotelsMegaMenu({
             </ul>
 
             <Link
-  href={viewAllHref}
-  onClick={onClose}
-  className="mt-8 inline-flex w-fit items-center gap-2 rounded-lg border border-white/20 px-3.5 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm transition-all duration-300 hover:border-amber-500/50 hover:bg-amber-500/10 hover:text-amber-500"
->
-  View all hotels
-</Link>
+              href={viewAllHref}
+              onClick={onClose}
+              className="mt-8 inline-flex w-fit items-center gap-2 rounded-lg border border-white/20 px-3.5 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm transition-all duration-300 hover:border-amber-500/50 hover:bg-amber-500/10 hover:text-amber-500"
+            >
+              View all hotels
+            </Link>
           </div>
 
           {/* Right: image preview */}
@@ -80,9 +77,8 @@ export default function HotelsMegaMenu({
             {items.map((item, index) => (
               <div
                 key={item.href}
-                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                  index === activeIndex ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${index === activeIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
                 style={{
                   backgroundImage: item.image ? `url(${item.image})` : undefined,
                 }}
@@ -104,9 +100,11 @@ export default function HotelsMegaMenu({
                 <Link
                   href={active.href}
                   onClick={onClose}
+                  aria-label={`Learn more about ${active.title}`}
                   className="group mt-6 inline-flex w-fit items-center gap-2 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white backdrop-blur-sm transition hover:text-amber-500"
                 >
                   <span>Learn more</span>
+                  <span className="sr-only">about {active.title}</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
